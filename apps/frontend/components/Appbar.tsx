@@ -1,5 +1,13 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import {
+  SignInButton,
+  SignUpButton,
+  SignedIn,
+  SignedOut,
+  UserButton,
+} from '@clerk/nextjs';
+
 export function Appbar() {
     return (
         <header className="sticky top-0 z-50 w-full border-b bg-background ">
@@ -7,9 +15,17 @@ export function Appbar() {
             <Link href="/" className="font-bold text-2xl tracking-tight cursor-pointer font-space-grotesk">
                 AppCraftAI
             </Link>
-            <Button className="cursor-pointer">
-                Login
-            </Button>
+            <SignedOut>
+              <SignInButton />
+              <SignUpButton>
+                <button className="bg-background text-ceramic-white font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 cursor-pointer">
+                  Sign Up
+                </button>
+              </SignUpButton>
+            </SignedOut>
+            <SignedIn>
+              <UserButton />
+            </SignedIn>
         </div>
         </header>
     )
