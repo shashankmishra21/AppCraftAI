@@ -10,9 +10,9 @@ import {
 
 export function Appbar() {
     return (
-        <header className="sticky top-0 z-50 w-full border-b bg-background ">
+        <header className="sticky top-0 z-50 w-full border-b-2 border-white/30 bg-background bg-zinc-900">
         <div className="flex mx-auto h-14 max-w-7xl items-center justify-between px-12">
-            <Link href="/" className="font-bold text-2xl tracking-tight cursor-pointer font-space-grotesk">
+            <Link href="/" className="font-bold text-2xl text-white tracking-tight cursor-pointer font-space-grotesk">
                 AppCraftAI
             </Link>
             <SignedOut>
